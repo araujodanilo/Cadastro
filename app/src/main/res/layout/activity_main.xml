@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvCompleteName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtCompleteName"
+        android:textSize="28sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <EditText
+        android:id="@+id/etCompleteName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvCompleteName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="24sp"
+        android:hint="@string/txtCompleteName"
+        android:inputType="textPersonName"
+        tools:ignore="MissingConstraints"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/tvPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtPhoneNumber"
+        android:textSize="28sp"
+        app:layout_constraintTop_toBottomOf="@id/etCompleteName"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <EditText
+        android:id="@+id/etPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvPhoneNumber"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:hint="@string/txtPhoneNumber"
+        android:inputType="phone"
+        tools:ignore="MissingConstraints,TextFields"
+        android:textSize="24sp"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtEmail"
+        android:textSize="28sp"
+        app:layout_constraintTop_toBottomOf="@id/etPhoneNumber"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvEmail"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:hint="@string/txtEmail"
+        android:inputType="textEmailAddress"
+        tools:ignore="MissingConstraints,TextFields"
+        android:textSize="24sp"
+        android:autofillHints="" />
+
+    <CheckBox
+        android:id="@+id/cbTermEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtTermEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvSex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtSex"
+        android:textSize="28sp"
+        app:layout_constraintTop_toBottomOf="@id/cbTermEmail"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <RadioGroup
+        android:id="@+id/rgSex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tvSex"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/rbMasculine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@string/masculine" />
+
+        <RadioButton
+            android:id="@+id/rbFeminine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@string/feminine" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtCity"
+        android:textSize="28sp"
+        app:layout_constraintTop_toBottomOf="@id/rgSex"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <EditText
+        android:id="@+id/etCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvCity"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:hint="@string/txtCity"
+        android:inputType="textEmailAddress"
+        tools:ignore="MissingConstraints,TextFields"
+        android:textSize="24sp"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/tvState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtState"
+        android:textSize="28sp"
+        app:layout_constraintTop_toBottomOf="@id/etCity"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <Spinner
+        android:id="@+id/spState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/arrState"
+        android:spinnerMode="dialog"
+        app:layout_constraintTop_toBottomOf="@id/tvState"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <Button
+        android:id="@+id/btClean"
+        android:text="@string/txtClean"
+        app:layout_constraintTop_toBottomOf="@+id/spState"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/btSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btSave"
+        android:text="@string/txtSave"
+        app:layout_constraintTop_toBottomOf="@+id/spState"
+        app:layout_constraintLeft_toLeftOf="@id/btClean"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
